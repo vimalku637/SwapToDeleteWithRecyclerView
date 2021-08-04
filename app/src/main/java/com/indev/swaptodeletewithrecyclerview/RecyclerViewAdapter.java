@@ -23,7 +23,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         public MyViewHolder(View itemView) {
             super(itemView);
-
             mTitle = itemView.findViewById(R.id.txtTitle);
         }
     }
@@ -40,7 +39,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        holder.mTitle.setText(data.get(position));
+        if(position % 2 == 0) {
+            holder.mTitle.setText(data.get(position));
+        }else{
+            holder.mTitle.setText(data.get(position));
+        }
     }
 
     @Override
